@@ -11,50 +11,7 @@ public class AgenciaBancaria {
 
     public static void main(String[] args) {
         contasBancarias = new ArrayList<Conta>();
-        operacoes();
-    }
-
-    public static void operacoes() {
-        System.out.println("----------------------------------------");
-        System.out.println("-                BANCO APK             -");
-        System.out.println("-                ---------             -");
-        System.out.println("-                                      -");
-        System.out.println("-                                      -");
-        System.out.println("-  O QUE PODEMOS FAZER POR VOCÊ HOJE?  -");
-        System.out.println("-                                      -");
-        System.out.println("- 1- Abra sua conta corrente;          -");
-        System.out.println("- 2- Efetuar um depósito;              -");
-        System.out.println("- 3- Realizar saque;                   -");
-        System.out.println("- 4- Efetuar uma transferência;        -");
-        System.out.println("- 5- Consultar Contas Existentes;      -");
-        System.out.println("- 6- Sair                              -");
-        System.out.println("----------------------------------------");
-
-        int operacao = input.nextInt();
-
-        switch (operacao) {
-            case 1:
-                criarConta();
-                break;
-            case 2:
-                depositar();
-                break;
-            case 3:
-                sacar();
-                break;
-            case 4:
-                transferir();
-                break;
-            case 5:
-                encontrarconta();
-                break;
-            case 6:
-                System.out.println("Obrigado usar nossa agência, volte sempre!!");
-            default:
-                System.out.println("Opção inválida!");
-                operacoes();
-                break;
-        }
+        menu();
     }
 
     public static void criarConta() {
@@ -81,7 +38,7 @@ public class AgenciaBancaria {
         contasBancarias.add(conta);
         System.out.println("Sua conta foi criada com sucesso!" + conta);
 
-        operacoes();
+        menu();
     }
 
     private static Conta encontrarConta() {
@@ -109,7 +66,7 @@ public class AgenciaBancaria {
         } else {
             System.out.println("Conta não encontrada");
         }
-        operacoes();
+        menu();
     }
 
     public static void sacar() {
@@ -126,7 +83,7 @@ public class AgenciaBancaria {
         } else {
             System.out.println("Conta não encontrada, revise as informaçõe se tente novamente");
         }
-        operacoes();
+        menu();
     }
 
     public static void transferir() {
@@ -148,7 +105,7 @@ public class AgenciaBancaria {
                 System.out.println("Conta para deposito não foi encontrada");
             }
         }
-        operacoes();
+        menu();
     }
     public static void encontrarconta(){
         if(contasBancarias.size() > 0) {
@@ -158,10 +115,53 @@ public class AgenciaBancaria {
         }else{
                 System.out.println("Não existem contas cadastradas");
             }
-        operacoes();
+       menu();
 
         }
 
     public static void sair(){
+    }
+    
+     public static void menu() {
+        System.out.println("----------------------------------------");
+        System.out.println("-                BANCO APK             -");
+        System.out.println("-                ---------             -");
+        System.out.println("-                                      -");
+        System.out.println("-                                      -");
+        System.out.println("-  O QUE PODEMOS FAZER POR VOCÊ HOJE?  -");
+        System.out.println("-                                      -");
+        System.out.println("- 1- Abra sua conta corrente;          -");
+        System.out.println("- 2- Efetuar um depósito;              -");
+        System.out.println("- 3- Realizar saque;                   -");
+        System.out.println("- 4- Efetuar uma transferência;        -");
+        System.out.println("- 5- Consultar Contas Existentes;      -");
+        System.out.println("- 6- Sair                              -");
+        System.out.println("----------------------------------------");
+
+        int menu = input.nextInt();
+
+        switch (operacao) {
+            case 1:
+                criarConta();
+                break;
+            case 2:
+                depositar();
+                break;
+            case 3:
+                sacar();
+                break;
+            case 4:
+                transferir();
+                break;
+            case 5:
+                encontrarconta();
+                break;
+            case 6:
+                System.out.println("Obrigado usar nossa agência, volte sempre!!");
+            default:
+                System.out.println("Opção inválida!");
+                menu();
+                break;
+        }
     }
     }
