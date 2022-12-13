@@ -26,7 +26,7 @@ public class AgenciaBancaria {
         System.out.println("- 2- Efetuar um depósito;              -");
         System.out.println("- 3- Realizar saque;                   -");
         System.out.println("- 4- Efetuar uma transferência;        -");
-        System.out.println("- 5- Consultar conta;                  -");
+        System.out.println("- 5- Consultar Contas Existentes;      -");
         System.out.println("- 6- Sair                              -");
         System.out.println("----------------------------------------");
 
